@@ -1,0 +1,93 @@
+
+{% load crispy_forms_tags %}
+
+{% load static %}
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+    <head>
+
+        <title> SAfeReg | Login </title>
+
+        <meta charset="utf-8" />
+
+        <meta name="viewport" content="width-device-width, initial-scale=1, maximum-scale=1"/>
+
+        <link rel="stylesheet" type="text/css" href="https://bootswatch.com/5/lux/bootstrap.min.css">
+
+        
+    </head>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-white justify-content-center">
+      <a class="navbar-brand main-heading" href="{% url '' %}"> &nbsp; SafeReg </a>
+      <button
+      class="navbar-toggler" type="button"
+      data-toggle="collapse" data-target="#navbarNavDropdown"
+      aria-controls="navbarNavDropdown" aria-expanded="false"
+      aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+
+      </button>
+
+
+      <div class="collapse navbar-collapse text-center" id="navbarNavDropdown">
+      
+          <ul class="navbar-nav ms-auto">
+
+            <li class="nav-item">
+                <a class="btn btn-alert navbar-btn" type="button"  href="{% url 'dashboard' %}">Dashboard</a>
+            </li>
+
+            <li class="nav-item">
+              
+                <a class="btn btn-alert navbar-btn" type="button"  href="{% url 'user-logout' %}">Logout</a>
+
+            </li>
+
+          </ul>
+      
+      </div>
+
+  </nav>
+
+    <style type="text/css">
+
+        body{
+            background-color: #f0f0f0;
+        }
+
+    </style>
+
+    <!-- Messages -->
+    {% for message in messages %}
+
+        <p class="alert alert-success float-center text-center {{message.tags}}"> {{message}} </p>
+
+    {% endfor %}
+
+  <br>
+
+  <body>
+ 
+    {% block content_wrapper %}
+      
+      <div class="container">
+            
+          {% block content %} 
+
+          {% endblock %}
+
+        </div>
+
+      {% endblock %}
+
+    
+
+  </body>
+
+
+  <script src="{% static 'js/app.js' %}"></script>
+
+</html>

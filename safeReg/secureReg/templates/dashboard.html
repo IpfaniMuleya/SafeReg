@@ -1,0 +1,98 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<nav class="navbar navbar-expand-lg navbar-light bg-white justify-content-center">
+    <a class="navbar-brand main-heading" href="{% url '' %}"> &nbsp; SafeReg </a>
+    <button
+    class="navbar-toggler" type="button"
+    data-toggle="collapse" data-target="#navbarNavDropdown"
+    aria-controls="navbarNavDropdown" aria-expanded="false"
+    aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+
+    </button>
+
+    <div class="collapse navbar-collapse text-center" id="navbarNavDropdown">
+        <ul class="navbar-nav ms-auto">
+
+            <li class="nav-item">
+                <a class="btn btn-alert navbar-btn" type="button"  href="{% url 'modules' %}">Modules</a>
+            </li>
+
+            <li class="nav-item">
+                <a class="btn btn-alert navbar-btn" type="button"  href="{% url 'user-logout' %}"> Logout</a>
+            </li>
+
+        </ul>
+    
+    </div>
+
+</nav>
+
+<br>
+
+<div class="container bg-white shadow-md p-5 " style="max-width: 800px;">
+
+    <h2> Welcome {{user}} </h2>
+
+    <p> SafeReg Dashboard </p>
+
+    <hr>
+    <!-- Enrolled Modules Listing -->
+    <h3>Enrolled Modules</h3>
+    <div class="enrolled-modules">
+        {% if enrolled_modules %}
+            {% for enrollment in enrolled_modules %}
+                <div class="module-item bg-light p-4 mb-4 shadow-sm">
+                    <h4>{{ enrollment.module.title }}</h4>
+                    <p><strong>Duration:</strong> {{ enrollment.module.duration }} days</p>
+                    <p><strong>Start Date:</strong> {{ enrollment.module.start_date }}</p>
+                    <p><strong>End Date:</strong> {{ enrollment.module.end_date }}</p>
+                    <p><strong>Status:</strong> {{ enrollment.status }}</p>
+                </div>
+            {% endfor %}
+        {% else %}
+            <p>You are not enrolled in any modules.</p>
+        {% endif %}
+    </div>
+
+</div>
+
+<br>
+
+<div class="container bg-white shadow-md p-5 " style="max-width: 800px;">
+
+    <h2> About SafeReg </h2>
+
+    <hr>
+
+    <p> SafeReg is a concept of the most secure module registration system </p>
+
+</div>
+
+<br>
+
+<div class="container bg-white shadow-md p-5 " style="max-width: 800px;">
+
+    <h2> 2FA </h2>
+
+    <p>  </p>
+
+    <hr>
+
+    <a class="btn btn-danger" type="button"  href="{% url 'two_factor:setup' %}">Enable 2FA</a>
+
+    <br> <br>
+
+    <a class="btn btn-primary" type="button"  href="{% url 'two_factor:profile' %}">2FA settings</a>
+
+</div>
+
+<br>
+
+{% if redirect_to_login_immediately %}
+    {{ redirect_to_login_immediately }}
+{% endif %}
+
+{% endblock  %}

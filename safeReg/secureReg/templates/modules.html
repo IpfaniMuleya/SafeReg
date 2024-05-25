@@ -1,0 +1,77 @@
+{% extends "base.html" %}
+
+{% block content %}
+<nav class="navbar navbar-expand-lg navbar-light bg-white justify-content-center">
+    <a class="navbar-brand main-heading" href="{% url '' %}"> &nbsp; SafeReg </a>
+    <button
+    class="navbar-toggler" type="button"
+    data-toggle="collapse" data-target="#navbarNavDropdown"
+    aria-controls="navbarNavDropdown" aria-expanded="false"
+    aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+
+    </button>
+
+    <div class="collapse navbar-collapse text-center" id="navbarNavDropdown">
+        <ul class="navbar-nav ms-auto">
+
+            <li class="nav-item">
+                <a class="btn btn-alert navbar-btn" type="button"  href="{% url 'dashboard' %}"> Dashboard</a>
+            </li>
+
+            <li class="nav-item">
+                <a class="btn btn-alert navbar-btn" type="button"  href="{% url 'user-logout' %}"> Logout</a>
+            </li>
+
+        </ul>
+    
+    </div>
+
+</nav>
+
+<br>
+
+<div class="container bg-white shadow-md p-5 " style="max-width: 800px;">
+    <h2>{{ user }}</h2>
+    <p>Please choose modules you want to enroll in from the list below</p>
+    <hr>
+
+    <!-- Module Listing -->
+    <h3>Available Modules</h3>
+    <div class="module-list">
+        {% for module in modules %}
+            <div class="module-item bg-light p-4 mb-4 shadow-sm">
+                <h4>{{ module.title }}</h4>
+                <p>{{ module.description }}</p>
+                <p><strong>Category:</strong> {{ module.category }}</p>
+                <p><strong>Duration:</strong> {{ module.duration }} days</p>
+                <p><strong>Start Date:</strong> {{ module.start_date }}</p>
+                <p><strong>End Date:</strong> {{ module.end_date }}</p>
+    
+                {% if enrollment_status.module.id %}
+                    <button type="button" class="btn btn-success" disabled>Enrolled</button>
+                {% else %}
+                    <form method="post" action="{% url 'enroll' module.id %}">
+                        {% csrf_token %}
+                        <button type="submit" class="btn btn-primary enroll-btn">Enroll Now</button>
+                    </form>
+                {% endif %}
+            </div>
+        {% endfor %}
+    </div>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const enrollButton = document.querySelector('.enroll-btn');
+        enrollButton.addEventListener('click', function(event) {
+            event.preventDefault();
+            enrollButton.classList.toggle('enrolled');
+        });
+    });
+</script>
+
+{% if redirect_to_login_immediately %}
+    {{ redirect_to_login_immediately }}
+{% endif %}
+{% endblock %}
