@@ -210,19 +210,19 @@ DEFAULT_FROM_EMAIL = 'saferegreset@gmail.com' # - GMAIL email address
 #predeployment command : python manage.py check --deploy
 #CSRF protection
 
-SESSION_COOKIE_SECURE = True
-CSRF_COOKIES_SECURE = True
-CSRF_COOKIE_SECURE = True
+#SESSION_COOKIE_SECURE = True
+#CSRF_COOKIES_SECURE = True
+#CSRF_COOKIE_SECURE = True
 
 # SSL redirect
 
-SECURE_SSL_REDIRECT = True #depends if loadbalancer available
+#SECURE_SSL_REDIRECT = True #depends if loadbalancer available
 
  #Enable HSTS # for man in the middle attcks
 
-SECURE_HSTS_SECONDS = 86400
-SECURE_HSTS_PRELOAD = True
-SECURE_HSTS_INCLUDE_SUBDOMAINS = True
+#SECURE_HSTS_SECONDS = 86400
+#SECURE_HSTS_PRELOAD = True
+#SECURE_HSTS_INCLUDE_SUBDOMAINS = True
 
 
 # Look into a CSP (Content Security Policy)
