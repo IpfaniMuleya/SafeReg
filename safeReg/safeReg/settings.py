@@ -29,11 +29,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = env('THE_SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True #remeber to change to False
+DEBUG = False
 
-ALLOWED_HOSTS = [] # use * or use proper domain name
-
-
+ALLOWED_HOSTS = [
+    'localhost',  
+    'safereg.onrender.com',  
+]
 # Application definition
 
 INSTALLED_APPS = [
