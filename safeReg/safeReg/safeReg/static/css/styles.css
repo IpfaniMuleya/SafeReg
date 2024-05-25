@@ -1,0 +1,18 @@
+h1{
+    color: blue;
+}
+
+body{
+   background-color: #f0f0f0; 
+   font-family: Arial, Helvetica, sans-serif;
+}
+
+.form-layout{
+    width: 500px;
+    border-radius: 20px; 
+}
+
+.enrolled {
+    background-color: green; /* Change this to the desired color */
+    color: white;
+}
