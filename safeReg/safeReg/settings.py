@@ -33,6 +33,7 @@ DEBUG = False #remeber to change to False
 
 ALLOWED_HOSTS = [
     'localhost',  
+    '',
     'safereg.onrender.com',  
 ]
 
