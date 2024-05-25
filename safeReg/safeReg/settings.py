@@ -29,7 +29,6 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = env('THE_SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-<<<<<<< HEAD
 DEBUG = False #remeber to change to False
 
 ALLOWED_HOSTS = [
@@ -37,14 +36,7 @@ ALLOWED_HOSTS = [
     'safereg.onrender.com',  
 ]
 
-=======
-DEBUG = False
->>>>>>> 225bdda90ee374e0279e9995845c2d96a8e08e47
 
-ALLOWED_HOSTS = [
-    'localhost',  
-    'safereg.onrender.com',  
-]
 # Application definition
 
 INSTALLED_APPS = [
@@ -223,19 +215,19 @@ DEFAULT_FROM_EMAIL = 'saferegreset@gmail.com' # - GMAIL email address
 #predeployment command : python manage.py check --deploy
 #CSRF protection
 
-#SESSION_COOKIE_SECURE = True
-#CSRF_COOKIES_SECURE = True
-#CSRF_COOKIE_SECURE = True
+SESSION_COOKIE_SECURE = True
+CSRF_COOKIES_SECURE = True
+CSRF_COOKIE_SECURE = True
 
 # SSL redirect
 
-#SECURE_SSL_REDIRECT = True #depends if loadbalancer available
+SECURE_SSL_REDIRECT = True #depends if loadbalancer available
 
  #Enable HSTS # for man in the middle attcks
 
-#SECURE_HSTS_SECONDS = 86400
-#SECURE_HSTS_PRELOAD = True
-#SECURE_HSTS_INCLUDE_SUBDOMAINS = True
+SECURE_HSTS_SECONDS = 86400
+SECURE_HSTS_PRELOAD = True
+SECURE_HSTS_INCLUDE_SUBDOMAINS = True
 
 
 # Look into a CSP (Content Security Policy)
