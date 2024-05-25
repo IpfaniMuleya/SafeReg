@@ -19,4 +19,7 @@ sqlparse==0.4.4
 typing_extensions==4.10.0
 tzdata==2024.1
 django-jazzmin
+<<<<<<< HEAD
 gunicorn
+=======
+>>>>>>> 225bdda90ee374e0279e9995845c2d96a8e08e47
