@@ -33,7 +33,6 @@ DEBUG = False #remeber to change to False
 
 ALLOWED_HOSTS = [
     'localhost',  
-    '',
     'safereg.onrender.com',  
 ]
 
@@ -216,9 +215,9 @@ DEFAULT_FROM_EMAIL = 'saferegreset@gmail.com' # - GMAIL email address
 #predeployment command : python manage.py check --deploy
 #CSRF protection
 
-SESSION_COOKIE_SECURE = True
-CSRF_COOKIES_SECURE = True
-CSRF_COOKIE_SECURE = True
+#SESSION_COOKIE_SECURE = True
+#CSRF_COOKIES_SECURE = True
+#CSRF_COOKIE_SECURE = True
 
 # SSL redirect
 
