@@ -32,7 +32,8 @@ SECRET_KEY = env('THE_SECRET_KEY')
 DEBUG = False #remeber to change to False
 
 ALLOWED_HOSTS = [
-    'localhost',  
+    'localhost', 
+    '*',
     'safereg.onrender.com',  
 ]
 
@@ -40,7 +41,7 @@ ALLOWED_HOSTS = [
 # Application definition
 
 INSTALLED_APPS = [
-   #'jazzmin',
+   'jazzmin',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -225,9 +226,9 @@ DEFAULT_FROM_EMAIL = 'saferegreset@gmail.com' # - GMAIL email address
 
  #Enable HSTS # for man in the middle attcks
 
-SECURE_HSTS_SECONDS = 86400
-SECURE_HSTS_PRELOAD = True
-SECURE_HSTS_INCLUDE_SUBDOMAINS = True
+#SECURE_HSTS_SECONDS = 86400
+#SECURE_HSTS_PRELOAD = True
+#SECURE_HSTS_INCLUDE_SUBDOMAINS = True
 
 
 # Look into a CSP (Content Security Policy)
