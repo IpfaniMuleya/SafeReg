@@ -222,7 +222,7 @@ CSRF_COOKIE_SECURE = True
 
 # SSL redirect
 
-SECURE_SSL_REDIRECT = True #depends if loadbalancer available
+#SECURE_SSL_REDIRECT = True #depends if loadbalancer available
 
  #Enable HSTS # for man in the middle attcks
 
