@@ -1,7 +1,7 @@
 asgiref==3.7.2
 colorama==0.4.6
 crispy-bootstrap5==2024.2
-Django==5.0.2
+Django>=5.0.9
 django-auto-logout==0.5.1
 django-axes==6.4.0
 django-crispy-forms==2.1
@@ -15,7 +15,7 @@ phonenumbers==8.13.32
 pypng==0.20220715.0
 pytz==2024.1
 qrcode==7.4.2
-sqlparse==0.4.4
+sqlparse>=0.5.0
 typing_extensions==4.10.0
 tzdata==2024.1
 gunicorn
